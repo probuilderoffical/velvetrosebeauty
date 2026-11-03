@@ -111,7 +111,7 @@ p:last-child{margin-bottom:0;}
 .gold{color:var(--gold);}
 .serif{font-family:var(--font-serif);}
 
-/* Buttons (Fixed SVG stretching) */
+/* Buttons */
 .btn{
   --btn-bg:transparent; --btn-fg:var(--text); --btn-bd:var(--line-strong);
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
@@ -302,7 +302,7 @@ main{position:relative;z-index:1;min-height:70vh; padding-bottom: 80px; /* Space
 .g5{grid-column:span 4;grid-row:span 1;}
 .g6{grid-column:span 8;grid-row:span 1;}
 
-/* Chatbot (Full Featured & Fixed Sizing) */
+/* Chatbot */
 .chat-launcher{position:fixed;right:20px;bottom:20px;z-index:120;display:flex;align-items:center;gap:10px;background:var(--deep-rose);color:#fff;border:0;border-radius:50px;padding:12px 20px;box-shadow:0 10px 30px rgba(0,0,0,.2);transition:transform .3s;}
 .chat-launcher:hover{transform:translateY(-3px);}
 .chat-launcher svg{width:24px;height:24px;}
@@ -332,7 +332,7 @@ main{position:relative;z-index:1;min-height:70vh; padding-bottom: 80px; /* Space
 .chat-summary div{display:flex;justify-content:space-between;margin-bottom:4px;}
 .chat-safety{background:rgba(140,59,90,.1);border-left:2px solid var(--deep-rose);padding:10px;font-size:.75rem;color:var(--muted);margin-bottom:10px;}
 
-/* Responsive */
+/* RESPONSIVE FIXES */
 @media (max-width: 1024px) {
   .featured-grid { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
@@ -342,18 +342,28 @@ main{position:relative;z-index:1;min-height:70vh; padding-bottom: 80px; /* Space
   .menu-toggle { display: flex; }
   .mobile-menu { display: block; }
   .container.nav-wrap { padding-inline: 16px; }
+  
   .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .hero-search { flex-direction: column; border-radius: 12px; padding: 16px; background: var(--surface); }
-  .hero-search .s-field { border-right: 0; border-bottom: 1px solid var(--line); padding: 12px 0; }
+  .hero-search .s-field { border-right: 0; border-bottom: 1px solid var(--line); padding: 12px 0; width: 100%; align-items: flex-start; }
   .hero-search .btn { width: 100%; border-radius: 8px; margin-top: 12px; }
   .hero-visual { aspect-ratio: 4/5; max-width: 400px; margin-inline: auto; }
+  
   .split { grid-template-columns: minmax(0, 1fr); }
-  .packages-grid { grid-template-columns: minmax(0, 1fr); }
+  .packages-grid { grid-template-columns: minmax(0, 1fr); max-width: 500px; margin-inline: auto; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
   .g1, .g2, .g3, .g4, .g5, .g6 { grid-column: span 1; grid-row: span 1; }
 }
 @media (max-width: 640px) {
   .hero h1 { font-size: 2.8rem; }
+  .featured-grid { grid-template-columns: minmax(0, 1fr); }
+  .why-grid { grid-template-columns: minmax(0, 1fr); }
+  .single-review { flex-direction: column; text-align: center; }
+  
+  .service-row { grid-template-columns: 1fr auto; gap: 10px 14px; }
+  .s-meta { grid-column: 1; grid-row: 2; text-align: left; }
+  .s-price { grid-column: 2; grid-row: 1/3; align-self: center; }
+  
   .chat-launcher { padding: 12px; border-radius: 50%; right: 16px; bottom: 16px; }
   .chat-launcher span { display: none; }
   .chat-panel { right: 10px; left: 10px; bottom: 10px; width: auto; height: calc(100vh - 20px); }
@@ -414,6 +424,8 @@ main{position:relative;z-index:1;min-height:70vh; padding-bottom: 80px; /* Space
 </div>
 
 <main id="main-content">
+
+  <!-- PAGE 1: HOME -->
   <section class="page active" id="page-home">
     <div class="hero">
       <div class="container hero-grid">
@@ -454,67 +466,402 @@ main{position:relative;z-index:1;min-height:70vh; padding-bottom: 80px; /* Space
         </div>
       </div>
     </div>
-    <!-- Rest of Home Page content here... -->
+
+    <div class="categories-wrap">
+      <div class="container cat-grid">
+        <a href="#/services" class="cat-item">
+          <div class="cat-img"><img src="https://images.pexels.com/photos/29546551/pexels-photo-29546551.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Hair"></div>
+          <span>Hair</span>
+        </a>
+        <a href="#/services" class="cat-item">
+          <div class="cat-img"><img src="https://images.pexels.com/photos/5069612/pexels-photo-5069612.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Skin"></div>
+          <span>Skin Care</span>
+        </a>
+        <a href="#/services" class="cat-item">
+          <div class="cat-img"><img src="https://images.pexels.com/photos/4938327/pexels-photo-4938327.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Nails"></div>
+          <span>Nails</span>
+        </a>
+        <a href="#/services" class="cat-item">
+          <div class="cat-img"><img src="https://images.pexels.com/photos/29543488/pexels-photo-29543488.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Bridal"></div>
+          <span>Bridal</span>
+        </a>
+        <a href="#/services" class="cat-item">
+          <div class="cat-img"><img src="https://images.pexels.com/photos/3738338/pexels-photo-3738338.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Styling"></div>
+          <span>Styling</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="section container">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Featured Rituals</p>
+          <h2>A considered edit.</h2>
+        </div>
+        <a href="#/services" class="btn btn-ghost btn-sm">View All</a>
+      </div>
+      
+      <div class="featured-grid">
+        <article class="f-card reveal">
+          <div class="f-img"><img src="https://images.pexels.com/photos/29546551/pexels-photo-29546551.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Haircut"></div>
+          <div class="f-info">
+            <h3>Signature Haircut</h3>
+            <div class="f-meta"><span>60 min</span><span class="f-price">AED 180</span></div>
+            <button class="btn btn-ghost" data-book="Signature Haircut">Book</button>
+          </div>
+        </article>
+        <article class="f-card reveal">
+          <div class="f-img"><img src="https://images.pexels.com/photos/5069612/pexels-photo-5069612.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Facial"></div>
+          <div class="f-info">
+            <h3>Signature Facial</h3>
+            <div class="f-meta"><span>60 min</span><span class="f-price">AED 280</span></div>
+            <button class="btn btn-ghost" data-book="Signature Facial">Book</button>
+          </div>
+        </article>
+        <article class="f-card reveal">
+          <div class="f-img"><img src="https://images.pexels.com/photos/4938327/pexels-photo-4938327.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gel Manicure"></div>
+          <div class="f-info">
+            <h3>Gel Manicure</h3>
+            <div class="f-meta"><span>60 min</span><span class="f-price">AED 180</span></div>
+            <button class="btn btn-ghost" data-book="Gel Manicure">Book</button>
+          </div>
+        </article>
+        <article class="f-card reveal">
+          <div class="f-img"><img src="https://images.pexels.com/photos/29543488/pexels-photo-29543488.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bridal"></div>
+          <div class="f-info">
+            <h3>Bridal Consultation</h3>
+            <div class="f-meta"><span>45 min</span><span class="f-price">AED 250</span></div>
+            <button class="btn btn-ghost" data-book="Bridal Consultation">Book</button>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="section container" style="padding-top:0;">
+      <div class="offer-banner reveal">
+        <img class="offer-bg" src="https://images.pexels.com/photos/3997994/pexels-photo-3997994.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Spa experience">
+        <div class="offer-content">
+          <p class="eyebrow">The Velvet Experience</p>
+          <h2>Beauty Today,<br>Happier Tomorrow.</h2>
+          <p>Book our Velvet Glam package this month and enjoy a complimentary scalp massage with any facial treatment.</p>
+          <div><a href="#/packages" class="btn btn-gold">Explore Packages</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="background:var(--bg-2);">
+      <div class="container">
+        <div class="section-head reveal" style="justify-content:center; text-align:center;">
+          <div>
+            <p class="eyebrow center">Why Velvet Rose</p>
+            <h2>Luxury is in the details.</h2>
+          </div>
+        </div>
+        <div class="why-grid reveal">
+          <div class="why-item">
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 6 6 .5-4.5 4 1.5 6-6-3.5-6 3.5 1.5-6-4.5-4 6-.5z"/></svg></div>
+            <h4>Expert Specialists</h4>
+            <p>Highly trained professionals dedicated to your specific needs.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <h4>Calm Environment</h4>
+            <p>An unhurried space designed to help you pause and reset.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <h4>Premium Products</h4>
+            <p>We use only the finest, skin-loving products available.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg></div>
+            <h4>Personalized Care</h4>
+            <p>Every ritual begins with a conversation about you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section container narrow">
+      <div class="single-review reveal">
+        <div class="rev-avatar">
+          <img src="https://images.pexels.com/photos/28625802/pexels-photo-28625802.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Client">
+        </div>
+        <div class="rev-text">
+          <blockquote>“I came in for a blow dry and left feeling like I’d had a proper pause. The studio is beautiful, but it’s the calm that stays with you.”</blockquote>
+          <div class="rev-author" style="font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); display:flex; gap:12px;">Sarah M. <span>★★★★★</span></div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Other sections (Services, Packages, etc.) remain exactly as before -->
+  <!-- PAGE 2: SERVICES -->
   <section class="page" id="page-services">
     <div class="page-hero container">
-      <a href="#/home" class="back-home">← Back to Home</a>
+      <a href="#/home" class="back-home"><span>←</span> Back to Home</a>
       <p class="eyebrow reveal">The Service Menu</p>
       <h1 class="reveal">Rituals, tailored <em>to you.</em></h1>
+      <p class="lead reveal">Hair, skin, nails and bridal beauty — each service is a starting point, adapted by your specialist.</p>
     </div>
-    <!-- Services content... -->
+
+    <div class="section container">
+      <div class="service-list reveal">
+        <div style="padding:20px 0;"><h2>Hair Artistry</h2></div>
+        <li class="service-row">
+          <div><div class="s-name">Signature Haircut</div><div class="s-desc">Consultation, precision cut and a finish you can recreate at home.</div></div>
+          <div class="s-meta">60 min</div><div class="s-price">AED 180</div>
+        </li>
+        <li class="service-row">
+          <div><div class="s-name">Luxury Blow Dry</div><div class="s-desc">A smooth, bouncy or textured finish with a scalp massage.</div></div>
+          <div class="s-meta">45 min</div><div class="s-price">AED 120</div>
+        </li>
+        <li class="service-row">
+          <div><div class="s-name">Hair Colour</div><div class="s-desc">Dimensional colour, gloss or root refresh, tailored to your tone.</div></div>
+          <div class="s-meta">120 min</div><div class="s-price">From AED 450</div>
+        </li>
+
+        <div style="padding:40px 0 20px;"><h2>Skin Rituals</h2></div>
+        <li class="service-row">
+          <div><div class="s-name">Signature Facial</div><div class="s-desc">Cleanse, exfoliate, massage and a tailored finish for a rested glow.</div></div>
+          <div class="s-meta">60 min</div><div class="s-price">AED 280</div>
+        </li>
+        <li class="service-row">
+          <div><div class="s-name">Deep Cleansing Facial</div><div class="s-desc">A thorough reset for congested or tired skin, with gentle extractions.</div></div>
+          <div class="s-meta">75 min</div><div class="s-price">AED 350</div>
+        </li>
+        <li class="service-row">
+          <div><div class="s-name">Eyebrow Threading</div><div class="s-desc">Precise shaping with a clean, natural finish.</div></div>
+          <div class="s-meta">15 min</div><div class="s-price">AED 35</div>
+        </li>
+
+        <div style="padding:40px 0 20px;"><h2>Nail Couture</h2></div>
+        <li class="service-row">
+          <div><div class="s-name">Classic Manicure</div><div class="s-desc">Shape, cuticle care, massage and a polished finish.</div></div>
+          <div class="s-meta">45 min</div><div class="s-price">AED 95</div>
+        </li>
+        <li class="service-row">
+          <div><div class="s-name">Gel Manicure</div><div class="s-desc">Long-wearing gel colour with careful preparation and a glossy finish.</div></div>
+          <div class="s-meta">60 min</div><div class="s-price">AED 180</div>
+        </li>
+
+        <div style="padding:40px 0 20px;"><h2>Bridal Beauty</h2></div>
+        <li class="service-row">
+          <div><div class="s-name">Bridal Consultation</div><div class="s-desc">A conversation about your dress, venue, skin, hair and timeline.</div></div>
+          <div class="s-meta">45 min</div><div class="s-price">AED 250</div>
+        </li>
+        <li class="service-row">
+          <div><div class="s-name">Bridal Makeup</div><div class="s-desc">Long-wear, photograph-friendly makeup tailored to your features.</div></div>
+          <div class="s-meta">120 min</div><div class="s-price">From AED 750</div>
+        </li>
+      </div>
+    </div>
   </section>
-  
+
+  <!-- PAGE 3: PACKAGES -->
   <section class="page" id="page-packages">
     <div class="page-hero container">
-      <a href="#/home" class="back-home">← Back to Home</a>
+      <a href="#/home" class="back-home"><span>←</span> Back to Home</a>
       <p class="eyebrow reveal">Curated Packages</p>
       <h1 class="reveal">A little more <em>considered.</em></h1>
+      <p class="lead reveal">Three packages for three different moments — an everyday glow, a celebration, or a wedding day.</p>
+    </div>
+
+    <div class="section container">
+      <div class="packages-grid">
+        <article class="package-card reveal">
+          <h3>Basic Glow</h3>
+          <div class="pkg-price">AED 299</div>
+          <p>A gentle, polished reset for a clear everyday glow.</p>
+          <ul class="pkg-list">
+            <li>Express Facial</li>
+            <li>Classic Manicure</li>
+            <li>Personal Beauty Consultation</li>
+          </ul>
+          <button class="btn btn-ghost" data-book="Basic Glow Package">Book Package</button>
+        </article>
+
+        <article class="package-card featured reveal">
+          <div style="background:var(--gold);color:#fff;font-size:.6rem;font-weight:600;padding:4px 10px;border-radius:20px;display:inline-block;margin-bottom:10px;align-self:flex-start;">MOST LOVED</div>
+          <h3>Velvet Glam</h3>
+          <div class="pkg-price">AED 599</div>
+          <p>Skin, hair and nails in one quietly glamorous appointment.</p>
+          <ul class="pkg-list">
+            <li>Signature Facial</li>
+            <li>Luxury Blow Dry</li>
+            <li>Gel Manicure</li>
+            <li>Complimentary Consultation</li>
+          </ul>
+          <button class="btn btn-gold" data-book="Velvet Glam Package">Book Package</button>
+        </article>
+
+        <article class="package-card reveal">
+          <h3>Bridal Pro</h3>
+          <div class="pkg-price">AED 1,999</div>
+          <p>A complete, calmly planned beauty experience for the wedding day.</p>
+          <ul class="pkg-list">
+            <li>Bridal Consultation</li>
+            <li>Premium Skin Preparation</li>
+            <li>Bridal Hair Styling</li>
+            <li>Professional Bridal Makeup</li>
+          </ul>
+          <button class="btn btn-ghost" data-book="Bridal Pro Package">Book Package</button>
+        </article>
+      </div>
     </div>
   </section>
-  
+
+  <!-- PAGE 4: TEAM -->
   <section class="page" id="page-team">
     <div class="page-hero container">
-      <a href="#/home" class="back-home">← Back to Home</a>
+      <a href="#/home" class="back-home"><span>←</span> Back to Home</a>
       <p class="eyebrow reveal">Our Team</p>
       <h1 class="reveal">The people behind <em>the pause.</em></h1>
     </div>
+    <div class="section container">
+      <div class="featured-grid">
+        <article class="f-card reveal" style="padding-bottom:16px;">
+          <div class="f-img"><img src="https://images.pexels.com/photos/33365180/pexels-photo-33365180.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Nadia"></div>
+          <div class="f-info">
+            <h3>Nadia Rahman</h3>
+            <p style="font-size:.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;">Creative Director</p>
+            <p style="font-size:.85rem;color:var(--muted);margin-bottom:12px;">Colour specialist who cares about dimension, shine and hair health.</p>
+            <button class="btn btn-ghost" data-book="Signature Haircut with Nadia">Book With Nadia</button>
+          </div>
+        </article>
+        <article class="f-card reveal" style="padding-bottom:16px;">
+          <div class="f-img"><img src="https://images.pexels.com/photos/29852852/pexels-photo-29852852.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Leila"></div>
+          <div class="f-info">
+            <h3>Leila Haddad</h3>
+            <p style="font-size:.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;">Skin Specialist</p>
+            <p style="font-size:.85rem;color:var(--muted);margin-bottom:12px;">Starts with your skin barrier, not a trend, to build facials that leave you rested.</p>
+            <button class="btn btn-ghost" data-book="Signature Facial with Leila">Book With Leila</button>
+          </div>
+        </article>
+        <article class="f-card reveal" style="padding-bottom:16px;">
+          <div class="f-img"><img src="https://images.pexels.com/photos/31085328/pexels-photo-31085328.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Amira"></div>
+          <div class="f-info">
+            <h3>Amira Khan</h3>
+            <p style="font-size:.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;">Nail & Bridal Artist</p>
+            <p style="font-size:.85rem;color:var(--muted);margin-bottom:12px;">Detail-led artist with a bridal calm. Keeps the focus on you — not the clock.</p>
+            <button class="btn btn-ghost" data-book="Gel Manicure with Amira">Book With Amira</button>
+          </div>
+        </article>
+      </div>
+    </div>
   </section>
-  
+
+  <!-- PAGE 5: GALLERY -->
   <section class="page" id="page-gallery">
     <div class="page-hero container">
-      <a href="#/home" class="back-home">← Back to Home</a>
+      <a href="#/home" class="back-home"><span>←</span> Back to Home</a>
       <p class="eyebrow reveal">The Gallery</p>
       <h1 class="reveal">A visual <em>mood.</em></h1>
     </div>
+    <div class="section container">
+      <div class="gallery-grid" id="gallery-grid">
+        <button class="g-item g1 reveal" data-full="https://images.pexels.com/photos/7750114/pexels-photo-7750114.jpeg?auto=compress&cs=tinysrgb&w=1600"><img src="https://images.pexels.com/photos/7750114/pexels-photo-7750114.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Interior"></button>
+        <button class="g-item g2 reveal" data-full="https://images.pexels.com/photos/5069612/pexels-photo-5069612.jpeg?auto=compress&cs=tinysrgb&w=1600"><img src="https://images.pexels.com/photos/5069612/pexels-photo-5069612.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Facial"></button>
+        <button class="g-item g3 reveal" data-full="https://images.pexels.com/photos/4938327/pexels-photo-4938327.jpeg?auto=compress&cs=tinysrgb&w=1600"><img src="https://images.pexels.com/photos/4938327/pexels-photo-4938327.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Nails"></button>
+        <button class="g-item g4 reveal" data-full="https://images.pexels.com/photos/29546551/pexels-photo-29546551.jpeg?auto=compress&cs=tinysrgb&w=1600"><img src="https://images.pexels.com/photos/29546551/pexels-photo-29546551.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hair"></button>
+        <button class="g-item g5 reveal" data-full="https://images.pexels.com/photos/29543488/pexels-photo-29543488.jpeg?auto=compress&cs=tinysrgb&w=1600"><img src="https://images.pexels.com/photos/29543488/pexels-photo-29543488.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Bridal"></button>
+        <button class="g-item g6 reveal" data-full="https://images.pexels.com/photos/11010800/pexels-photo-11010800.jpeg?auto=compress&cs=tinysrgb&w=1600"><img src="https://images.pexels.com/photos/11010800/pexels-photo-11010800.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Products"></button>
+      </div>
+    </div>
   </section>
-  
+
+  <!-- PAGE 6: REVIEWS -->
   <section class="page" id="page-reviews">
     <div class="page-hero container">
-      <a href="#/home" class="back-home">← Back to Home</a>
+      <a href="#/home" class="back-home"><span>←</span> Back to Home</a>
       <p class="eyebrow reveal">Reviews</p>
       <h1 class="reveal">In their <em>words.</em></h1>
     </div>
+    <div class="section container narrow">
+      <div class="review-list">
+        <article class="single-review reveal" style="margin-bottom:24px;">
+          <div class="rev-text">
+            <blockquote>“I came in for a blow dry and left feeling like I’d had a proper pause. The studio is beautiful, but it’s the calm that stays with you.”</blockquote>
+            <div class="rev-author" style="font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); display:flex; gap:12px;">Sarah M. <span>★★★★★</span></div>
+          </div>
+        </article>
+        <article class="single-review reveal" style="margin-bottom:24px;">
+          <div class="rev-text">
+            <blockquote>“My facial was genuinely tailored. Leila asked about my skin, adjusted the products, and I left with a plan instead of a sales pitch.”</blockquote>
+            <div class="rev-author" style="font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); display:flex; gap:12px;">Ayesha K. <span>★★★★★</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
   </section>
-  
+
+  <!-- PAGE 7: FAQ -->
   <section class="page" id="page-faq">
     <div class="page-hero container">
-      <a href="#/home" class="back-home">← Back to Home</a>
+      <a href="#/home" class="back-home"><span>←</span> Back to Home</a>
       <p class="eyebrow reveal">FAQs</p>
       <h1 class="reveal">A few useful <em>answers.</em></h1>
     </div>
+    <div class="section container narrow">
+      <div class="faq-list">
+        <div class="faq-item" style="border-bottom:1px solid var(--line); padding:20px 0;">
+          <button class="faq-q" style="width:100%;text-align:left;background:none;border:0;font-size:1.2rem;font-family:var(--font-serif);display:flex;justify-content:space-between;" aria-expanded="true" aria-controls="faq-a1">
+            <span>What are your opening hours?</span><span>−</span>
+          </button>
+          <div class="faq-a" id="faq-a1" style="padding-top:10px;color:var(--muted);">Saturday to Thursday, 10:00 AM to 9:00 PM. Friday hours are by enquiry.</div>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid var(--line); padding:20px 0;">
+          <button class="faq-q" style="width:100%;text-align:left;background:none;border:0;font-size:1.2rem;font-family:var(--font-serif);display:flex;justify-content:space-between;" aria-expanded="false" aria-controls="faq-a2">
+            <span>How can I book an appointment?</span><span>+</span>
+          </button>
+          <div class="faq-a" id="faq-a2" style="display:none; padding-top:10px;color:var(--muted);">Appointments can be requested through the chatbot or WhatsApp. Our team will confirm availability.</div>
+        </div>
+      </div>
+    </div>
   </section>
-  
+
+  <!-- PAGE 8: CONTACT -->
   <section class="page" id="page-contact">
     <div class="page-hero container">
-      <a href="#/home" class="back-home">← Back to Home</a>
+      <a href="#/home" class="back-home"><span>←</span> Back to Home</a>
       <p class="eyebrow reveal">Contact</p>
       <h1 class="reveal">Come and <em>pause.</em></h1>
     </div>
+    <div class="section container">
+      <div class="split">
+        <div class="reveal">
+          <div style="margin-bottom:24px;">
+            <h4 style="font-size:.8rem;text-transform:uppercase;color:var(--gold);letter-spacing:.1em;">Studio</h4>
+            <p style="font-size:1.2rem;">Jumeirah, Dubai, UAE</p>
+          </div>
+          <div style="margin-bottom:24px;">
+            <h4 style="font-size:.8rem;text-transform:uppercase;color:var(--gold);letter-spacing:.1em;">Phone</h4>
+            <p style="font-size:1.2rem;"><a href="tel:+971500000000">+971 50 000 0000</a></p>
+          </div>
+          <div class="btn-row">
+            <a href="https://wa.me/971500000000" target="_blank" class="btn btn-rose">WhatsApp</a>
+            <button class="btn btn-ghost" data-open-chat>Chat with Assistant</button>
+          </div>
+        </div>
+        <div class="reveal">
+          <div style="background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:40px; text-align:center;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" style="margin:0 auto 16px;"><path d="M12 21s7-5.5 7-12a7 7 0 1 0-14 0c0 6.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <h3>Jumeirah, Dubai</h3>
+            <p style="color:var(--muted);margin-bottom:16px;">Demo location</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Jumeirah%2C%20Dubai" target="_blank" class="btn btn-ghost btn-sm">Open in Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
+
 </main>
+
+<footer class="site-footer" style="border-top:1px solid var(--line); padding:40px 0; margin-top:40px;">
+  <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;font-size:.8rem;color:var(--muted);">
+    <div>© <span id="year"></span> Velvet Rose Beauty Studio. Demo Website.</div>
+    <div>Images via Pexels.</div>
+  </div>
+</footer>
 
 <!-- CHATBOT UI -->
 <button class="chat-launcher" id="chat-launcher" aria-expanded="false">
@@ -535,6 +882,12 @@ main{position:relative;z-index:1;min-height:70vh; padding-bottom: 80px; /* Space
   <div class="chat-messages" id="chat-messages"></div>
   <div class="chat-interactive" id="chat-interactive"></div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" style="position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:200;display:none;place-items:center;">
+  <button id="lb-close" style="position:absolute;top:20px;right:20px;background:none;border:0;color:#fff;font-size:2rem;cursor:pointer;">×</button>
+  <img id="lb-img" src="" style="max-height:90vh;max-width:90vw;">
+</div>
 
 <script>
 (function(){
@@ -596,6 +949,20 @@ main{position:relative;z-index:1;min-height:70vh; padding-bottom: 80px; /* Space
 
   const yearEl = $('#year');
   if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* --- Lightbox Logic --- */
+  const lightbox = $('#lightbox');
+  const lbImg = $('#lb-img');
+  if (lightbox && lbImg) {
+    $$('.g-item').forEach(item => {
+      item.addEventListener('click', () => {
+        lbImg.src = item.dataset.full;
+        lightbox.style.display = 'grid';
+      });
+    });
+    $('#lb-close').addEventListener('click', () => lightbox.style.display = 'none');
+    lightbox.addEventListener('click', e => { if(e.target === lightbox) lightbox.style.display = 'none'; });
+  }
 
   /* --- 2. ADVANCED CHATBOT LOGIC --- */
   const chatPanel = $('#chat-panel');
@@ -975,6 +1342,13 @@ main{position:relative;z-index:1;min-height:70vh; padding-bottom: 80px; /* Space
     if (e.target.closest('[data-open-chat]')) {
       e.preventDefault();
       if (!chatPanel.classList.contains('open')) openChat();
+    }
+    const bookBtn = e.target.closest('[data-book]');
+    if (bookBtn) {
+      e.preventDefault();
+      if (!chatPanel.classList.contains('open')) openChat();
+      addMsg(`Selected: ${bookBtn.dataset.book}`, 'user');
+      renderBookingCategory(); 
     }
   });
 
